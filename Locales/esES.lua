@@ -234,9 +234,9 @@ L.imported_countdown_position = "Posición de Cuenta Regresiva"
 L.imported_countdown_settings = "Configuraciones de Cuenta Regresiva"
 L.imported_countdown_color = "Color de Cuenta Regresiva"
 L.imported_nameplate_settings = "Configuraciones de Placas de Nombre"
---L.imported_mythicplus_settings = "Mythic+ Settings"
---L.mythicplus_settings_import_desc = "Import all Mythic+ settings."
---L.mythicplus_settings_export_desc = "Export all Mythic+ settings."
+L.imported_mythicplus_settings = "Mítica+ ajustes"
+L.mythicplus_settings_import_desc = "Importar todos los ajustes de Mítica+."
+L.mythicplus_settings_export_desc = "Exportar todos los ajustes de Mítica+."
 
 -- Statistics
 L.statistics = "Estadísticas"
