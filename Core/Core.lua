@@ -292,7 +292,7 @@ do
 		-- Not if you released spirit on a world boss or if the GUI is open
 		if not UnitIsDeadOrGhost("player") and (not BigWigsOptions or not BigWigsOptions:IsOpen()) then
 			local bars = plugins.Bars
-			if not bars or not bars:HasActiveBars() then -- Not if bars are showing
+			if not BigWigs3DB.breakTime and (not bars or not bars:HasActiveBars()) then -- Not if break time or bars are showing
 				DisableCore() -- Alive in a non-enable zone, disable
 			end
 		end
@@ -503,7 +503,12 @@ do
 		return BigWigsAPI:GetLocale("BigWigs: Encounter Info")[key]
 	end
 	local C = core.C -- Set from Constants.lua
-	local standardFlag = C.BAR + C.CASTBAR + C.MESSAGE + C.ICON + C.SOUND + C.SAY + C.SAY_COUNTDOWN + C.PROXIMITY + C.FLASH + C.ALTPOWER + C.VOICE + C.INFOBOX + C.NAMEPLATE
+	local standardFlag = C.BAR + C.CASTBAR + C.ICON + C.SOUND
+		+ (loader.db.profile.bossModMessagesDisabled and 0 or C.MESSAGE)
+		+ (loader.db.profile.bossModNameplatesDisabled and 0 or C.NAMEPLATE)
+		+ (loader.db.profile.bossModVoiceDisabled and 0 or C.VOICE)
+		+ C.SAY + C.SAY_COUNTDOWN + C.PROXIMITY
+		+ C.FLASH + C.ALTPOWER + C.INFOBOX
 	local defaultToggles = setmetatable({
 		berserk = C.BAR + C.MESSAGE + C.SOUND,
 		proximity = C.PROXIMITY,
@@ -543,7 +548,9 @@ do
 				if t == "table" then
 					for i = 2, #v do
 						local flagName = v[i]
-						if C[flagName] then
+						if flagName == "NAMEPLATE" and loader.db.profile.bossModNameplatesDisabled then
+							bitflags = bitflags -- Don't add the NAMEPLATE flag
+						elseif C[flagName] then
 							bitflags = bitflags + C[flagName]
 						elseif flagName == "OFF" then
 							disabled = true

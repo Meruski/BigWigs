@@ -135,8 +135,12 @@ files["Plugins/BossBlock.lua"].ignore = {
 files["Plugins/Break.lua"].ignore = {
 	"113/time",
 }
+files["Plugins/Messages.lua"].ignore = {
+	"113/C_UI",
+}
 files["Plugins/Nameplates.lua"].ignore = {
 	"113/C_NamePlate",
+	"113/C_UI",
 }
 files["Plugins/Proximity.lua"].ignore = {
 	"113/GetNumGroupMembers",
@@ -168,6 +172,8 @@ files["**/Plugins/*.lua"].ignore = {
 }
 files["Options/Options.lua"].ignore = {
 	"113/C_UI",
+	"113/geterrorhandler",
+	"113/securecallfunction",
 }
 files["**/?Locales/*.lua"].ignore = {
 	"542", -- Empty if branch
@@ -188,6 +194,7 @@ files["Tools/Keystones.lua"].ignore = {
 	"113/C_DateAndTime",
 	"113/C_MythicPlus",
 	"113/C_PlayerInfo",
+	"113/ChallengesKeystoneFrame",
 	"113/ClearOverrideBindings",
 	"113/GameFontHighlightSmall",
 	"113/GetMaxPlayerLevel",

@@ -234,6 +234,9 @@ L.imported_countdown_position = "카운트다운 위치"
 L.imported_countdown_settings = "카운트다운 설정"
 L.imported_countdown_color = "카운트다운 색상"
 L.imported_nameplate_settings = "이름표 설정"
+L.imported_mythicplus_settings = "신화+ 설정"
+L.mythicplus_settings_import_desc = "모든 신화+ 설정 가져오기."
+L.mythicplus_settings_export_desc = "모든 신화+ 설정 내보내기."
 
 -- Statistics
 L.statistics = "통계"
@@ -272,7 +275,7 @@ L.H25 = "영웅 25"
 -----------------------------------------------------------------------
 
 L.tools = "도구"
-L.toolsDesc = "BigWigs은 보스와의 전투를 더욱 빠르고 간편하게 만들어 주는 다양한 도구 또는 \"편의 기능\"을 제공합니다. |cFF33FF99+|r 아이콘을 클릭하여 메뉴를 확장하면 모든 기능을 확인할 수 있습니다."
+L.toolsDesc = "BigWigs은 보스와의 전투를 더욱 빠르고 간편하게 만들어 주는 다양한 도구 또는 \"편의 기능\"을 제공합니다."
 
 -----------------------------------------------------------------------
 -- AutoRole.lua
@@ -305,14 +308,14 @@ L.keystoneTeleportInCombat = "전투 중에는 순간이동할 수 없습니다.
 L.keystoneTabHistory = "기록"
 L.keystoneHeaderThisWeek = "이번 주"
 L.keystoneHeaderOlder = "이전 기록"
-L.keystoneScoreTooltip = "던전 점수: |cFFFFFFFF%d|r"
-L.keystoneScoreGainedTooltip = "획득 점수: |cFFFFFFFF+%d|r"
-L.keystoneCompletedTooltip = "제한 시간 내에 완료"
-L.keystoneFailedTooltip = "제한 시간 내에 완료하지 못함"
+L.keystoneScoreGainedTooltip = "획득 점수: |cFFFFFFFF+%d|r\n던전 점수: |cFFFFFFFF%d|r"
+L.keystoneCompletedTooltip = "제한 시간 내에 완료: |cFFFFFFFF%d분 %d초|r\n제한 시간: |cFFFFFFFF%d분 %d초|r"
+L.keystoneFailedTooltip = "제한 시간 내에 완료하지 못함: |cFFFFFFFF%d분 %d초|r\n제한 시간: |cFFFFFFFF%d분 %d초|r"
 L.keystoneExplainer = "신화+ 경험을 향상시키는 다양한 도구 모음입니다."
 L.keystoneAutoSlot = "쐐기돌 자동 삽입"
 L.keystoneAutoSlotDesc = "마력의 샘을 열 때 자동으로 쐐기돌을 넣습니다."
 L.keystoneAutoSlotMessage = "%s 쐐기돌을 자동으로 넣었습니다."
+L.keystoneAutoSlotFrame = "|TInterface\\AddOns\\BigWigs\\Media\\Icons\\minimap_raid:14:14|t 쐐기돌 자동 삽입됨"
 L.keystoneModuleName = "신화+"
 L.keystoneStartBar = "%s +%d" -- Format is SHORT_DUNGEON_NAME +KEYSTONE_LEVEL e.g. "ROOK +12"
 L.keystoneStartMessage = "%s +%d 지금 시작합니다!" -- Format is LONG_DUNGEON_NAME +KEYSTONE_LEVEL e.g. "The Rookery +12 begins now!"
@@ -340,6 +343,9 @@ L.keystoneHistoryRunsOlderTooltip = "이번 주 이전까지 던전 총계: |cFF
 L.keystoneHistoryScore = "점수 +%d"
 L.keystoneHistoryScoreThisWeekTooltip = "이번 주 획득 총 점수: |cFFFFFFFF+%d|r"
 L.keystoneHistoryScoreOlderTooltip = "이번 주 이전에 획득한 총 점수: |cFFFFFFFF+%d|r"
+L.keystoneTimeUnder = "|cFF33FF99-%02d:%02d|r"
+L.keystoneTimeOver = "|cFFFF4411+%02d:%02d|r"
+L.keystoneTeleportTip = "아래 던전 이름을 클릭하면 |cFF33FF99순간이동|r 던전 입구로 바로 이동합니다."
 
 -- It doesn't really matter what you call it as long as it's recognizable and limited to ~6 characters
 L.keystoneShortName_TheRookery = "부화장"
@@ -381,11 +387,11 @@ L.instanceKeysTest8 = "|cFF00FF98수도사:|r +8"
 L.instanceKeysTest10 = "|cFFFF7C0A드루이드:|r +10"
 L.instanceKeysDisplay = "|c%s%s:|r +%d" -- "PLAYER_NAME: +DUNGEON_LEVEL"
 L.instanceKeysDisplayWithDungeon = "|c%s%s:|r +%d (%s)" -- "PLAYER_NAME: +DUNGEON_LEVEL (DUNGEON_NAME)"
---L.instanceKeysShowAll = "Always show all players"
---L.instanceKeysShowAllDesc = "Enabling this option will show all players in the list, even if their keystone doesn't belong to the dungeon you are in."
---L.instanceKeysOtherDungeonColor = "Other dungeon color"
---L.instanceKeysOtherDungeonColorDesc = "Choose the font color for players that have keystones that don't belong to the dungeon you are in."
---L.instanceKeysEndOfRunDesc = "By default the list will only show when you enter a mythic dungeon. Enabling this option will also show the list when the Mythic+ is over."
+L.instanceKeysShowAll = "모든 플레이어 항상 표시"
+L.instanceKeysShowAllDesc = "이 옵션을 활성화하면 현재 있는 던전과 관련이 없는 쐐기돌을 가진 플레이어도 목록에 표시됩니다."
+L.instanceKeysOtherDungeonColor = "다른 던전 색상"
+L.instanceKeysOtherDungeonColorDesc = "현재 있는 던전과 관련이 없는 쐐기돌을 가진 플레이어의 글꼴 색상을 선택합니다."
+L.instanceKeysEndOfRunDesc = "기본적으로 목록은 신화 던전에 들어갈 때만 표시됩니다. 이 옵션을 활성화하면 신화+가 끝난 후에도 목록이 표시됩니다."
 
 -----------------------------------------------------------------------
 -- LFGTimer.lua
@@ -436,6 +442,9 @@ L.CENTER = "중앙"
 L.customAnchorPoint = "고급: 사용자 지정 앵커 지점"
 L.sourcePoint = "원본 지점"
 L.destinationPoint = "대상 지점"
+L.drawStrata = "계층"
+L.medium = "중간"
+L.low = "낮음"
 
 -----------------------------------------------------------------------
 -- AltPower.lua
@@ -699,6 +708,11 @@ L.displayTimeDesc = "메시지를 표시할 시간, 초 단위"
 L.fadeTime = "서서히 사라질 시간"
 L.fadeTimeDesc = "메시지를 서서히 없앨 시간, 초 단위"
 
+L.messagesOptInHeaderOff = "보스 모드 메시지 '선택 활성화' 모드: 이 옵션을 활성화하면 모든 보스 모듈에서 메시지가 비활성화됩니다.\n\n원하는 메시지만 각 모듈에서 수동으로 활성화해야 합니다.\n\n"
+L.messagesOptInHeaderOn = "보스 모드 메시지 '선택 활성화' 모드가 |cFF33FF99활성화|r되었습니다. 보스 모드 메시지를 보려면 특정 보스 능력 설정에 들어가서 '|cFF33FF99메시지|r' 옵션을 활성화하세요.\n\n"
+L.messagesOptInTitle = "보스 모드 메시지 '선택 활성화' 모드"
+L.messagesOptInWarning = "|cffff4411경고!|r\n\n'선택 활성화' 모드를 활성화하면 모든 보스 모듈에서 메시지가 비활성화됩니다. 원하는 메시지만 각 모듈에서 수동으로 활성화해야 합니다.\n\nUI가 재시작됩니다. 계속하시겠습니까?"
+
 -----------------------------------------------------------------------
 -- Nameplates.lua
 --
@@ -730,9 +744,12 @@ L.showBorder = "테두리 표시"
 L.showBorderDesc = "아이콘 주위에 테두리를 표시합니다."
 L.borderColor = "테두리 색상"
 L.borderSize = "테두리 크기"
+L.borderOffset = "테두리 위치 조정"
+L.borderName = "테두리 이름"
 L.showNumbers = "숫자 표시"
 L.showNumbersDesc = "아이콘에 숫자 표시."
 L.cooldown = "쿨다운"
+L.cooldownEmphasizeHeader = "기본적으로 강조 기능은 비활성화되어 있습니다(0초). 1초 이상으로 설정하면 강조 기능이 활성화됩니다. 이렇게 하면 해당 숫자에 다른 글꼴 색상과 글꼴 크기를 설정할 수 있습니다."
 L.showCooldownSwipe = "회전 애니메이션 표시"
 L.showCooldownSwipeDesc = "쿨다운이 활성화된 경우 아이콘에 회전 애니메이션을 표시합니다."
 L.showCooldownEdge = "가장자리 표시"
@@ -751,6 +768,8 @@ L.fixate_test = "테스트 텍스트" -- Text that displays to test on the frame
 L.resetNameplateTextDesc = "이름표 텍스트와 관련된 모든 옵션을 초기화합니다."
 L.glowAt = "반짝임 시작 (초)"
 L.glowAt_desc = "반짝임이 시작될 때 재사용 대기시간이 몇 초 남았는지 선택합니다."
+L.offsetX = "X 위치 조정"
+L.offsetY = "Y 위치 조정"
 L.headerIconSizeTarget = "현재 대상의 아이콘 크기"
 L.headerIconSizeOthers = "다른 모든 대상의 아이콘 크기"
 L.headerIconPositionTarget = "현재 대상의 아이콘 위치"
@@ -775,6 +794,11 @@ L.scale = "크기"
 L.scale_glow_desc = "애니메이션에서 반짝임의 크기."
 L.startAnimation = "애니메이션 시작"
 L.startAnimation_glow_desc = "이 반짝임은 시작 애니메이션을 가지고 있으며, 애니메이션의 활성화/비활성화를 설정합니다."
+
+L.nameplateOptInHeaderOff = "\n\n\n\n보스 모드 이름표 '선택 활성화' 모드: 이 옵션을 활성화하면 모든 보스 모듈에서 이름표가 비활성화됩니다.\n\n원하는 이름표만 각 모듈에서 수동으로 활성화해야 합니다.\n\n"
+L.nameplateOptInHeaderOn = "\n\n\n\n보스 모드 이름표 '선택 활성화' 모드가 |cFF33FF99활성화|r되었습니다. 보스 모드 이름표를 보려면 특정 보스 능력 설정에 들어가서 '|cFF33FF99이름표|r' 옵션을 활성화하세요.\n\n"
+L.nameplateOptInTitle = "보스 모드 이름표 '선택 활성화' 모드"
+L.nameplateOptInWarning = "|cffff4411경고!|r\n\n'선택 활성화' 모드를 활성화하면 모든 보스 모듈에서 이름표가 비활성화됩니다. 원하는 이름표만 각 모듈에서 수동으로 활성화해야 합니다.\n\nUI가 재시작됩니다. 계속하시겠습니까?"
 
 -----------------------------------------------------------------------
 -- Proximity.lua
@@ -819,6 +843,7 @@ L.combatLogDesc = "전투 예정 타이머 시작부터 보스 전투 종료로 
 L.pull = "전투 예정"
 L.engageSoundTitle = "보스 전투가 시작되면 사운드 재생"
 L.pullStartedSoundTitle = "전투 예정 타이머가 시작되었을때 소리 재생"
+L.pullStartedMessageTitle = "전투 예정 타이머가 시작될 때 메시지 표시"
 L.pullFinishedSoundTitle = "전투 예정 타이머가 끝났을때 소리 재생"
 L.pullStartedBy = "%s에 의해 풀 타이머가 시작되었습니다."
 L.pullStopped = "%s|1이;가; 전투 예정 타이머를 취소했습니다."

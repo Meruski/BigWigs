@@ -29,6 +29,7 @@ end
 
 L = BigWigs:NewBossLocale("Nexus-King Salhadaar", "frFR")
 if L then
+	--L.fractal_images = "Dragons"
 	L.oath_bound_removed_dose = "1x Lien par serment enlevé"
 	L.behead = "Griffes" -- Claws of a dragon
 	L.netherbreaker = "Cercles"
@@ -39,15 +40,23 @@ end
 
 L = BigWigs:NewBossLocale("Dimensius, the All-Devouring", "frFR")
 if L then
-	L.reverse_gravity = "Gravité" -- Short for Reverse Gravity
+	L.gravity = "Gravité" -- Short for Reverse Gravity
 	L.extinction = "Fragment" -- Dimensius hurls a fragment of a broken world
 	L.slows = "Ralentissements"
 	L.slow = "Ralentissement" -- Singular of Slows
+	--L.mass_destruction = "Lines"
+	--L.mass_destruction_single = "Line"
 	L.stardust_nova = "Nova" -- Short for Stardust Nova
 	L.extinguish_the_stars = "Étoiles" -- Short for Extinguish the Stars
 	L.darkened_sky = "Anneaux"
-	L.cosmic_collapse = "Effondrement" -- Short for Cosmic Collapse
+	--L.cosmic_collapse = "Tank Pull"
+	--L.cosmic_collapse_easy = "Tank Smash"
 	L.soaring_reshii = "Monture disponible" -- On the timer for when flying is available
+
+	--L.left_living_mass = "Living Mass (Left)"
+	--L.right_living_mass = "Living Mass (Right)"
+
+	--L.soaring_reshii_monster_yell = "You've done well so far." -- [CHAT_MSG_MONSTER_YELL] You've done well so far. Surprising. But we're not done yet.#Xal'atath###Meeresflask##0#0##0#256#nil#0#false#false#false#false",
 
 	--L.weakened_soon_monster_yell = "We must strike--now!" -- [CHAT_MSG_MONSTER_YELL] We must strike--now!#Xal'atath###Xal'atath##0#0##0#4873#nil#0#false#false#false#false",
 end
